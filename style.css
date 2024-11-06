@@ -92,12 +92,13 @@ body {
 }
 
 h1 {
-    font-family: "Londrina Sketch";
+    font-family: "Rakkas", Roboto;
     font-weight: bold;
+    font-size: 3rem;
 }
 
 h2 {
-    font-family: "Londrina Shadow";
+    font-family: "Bodoni Moda", Roboto;
 }
 
 
@@ -118,7 +119,8 @@ header {
 
 .right-side img {
     border-radius: 50%;
-    width: 50px;
+    width: auto;
+    height: 60px;
     margin-right: 1rem;
 }
 
@@ -126,29 +128,36 @@ header {
     width: 30px;
 }
 
-
 /* ​‌‍‌‍⁡⁢⁣⁣--END HEADER--​⁡​ */
+
 
 /* ⁡⁢⁣⁣​‌‍‌--HERO--​⁡ */
 
 main {
     width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
 }
 
 main article {
     display: flex;
     margin-bottom: 3rem;
+    align-items: center;
 }
 
 article>h2 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin-right: auto;
-    width: 35vw;
-    margin-left: 3rem;
+    width: 40vw;
+    margin-left: 0rem;
+    font-weight: 700;
 }
 
 article>form {
-    margin-right: 5rem;
+    margin-right: 4rem;
+    margin-left: 4rem;
 }
 
 form>fieldset {
@@ -185,3 +194,44 @@ button {
 
 /* ⁡⁢⁣⁣​‌‍‌--END HERO--​⁡ */
 
+
+
+/* ⁡⁢⁣⁣​‌‍‌--START SECTION--​⁡ */
+section {
+    background-color: #DAD2C6; 
+    width: 90%;
+    margin-top: 0rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.5rem;
+    margin: 4.5rem 3.5rem 2rem 2rem;
+}
+
+.card-book {
+    position: relative;
+}
+
+.card-book:nth-child(3n + 2) {
+    top: -3rem;
+}
+
+.card-book img {
+    border-radius: 3px;
+    box-shadow: 0 10px 10px rgba(98, 98, 98, 0.244);
+}
+
+.desc-book {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+
+    background-color: #9B9990;
+    width: 60%;
+    padding: 8px;
+    border-radius: 2px;
+}
+
+/* ⁡⁢⁣⁣​‌‍‌--END SECTION--​⁡ */
