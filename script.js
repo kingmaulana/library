@@ -96,6 +96,7 @@ btn.addEventListener('click', (x) => {
 
 //Function button remove
 function buttonRemove() {
+    const trTable = document.querySelectorAll("tr");
     const btnRemove = document.querySelectorAll(".remove");
     btnRemove.forEach(button => {
         button.addEventListener('click', () => {
@@ -104,6 +105,12 @@ function buttonRemove() {
                 if(book.title === button.attributes[0].value) {
                     const index = myLibrary.indexOf(book);
                     myLibrary.splice(index, 1);
+
+                    trTable.forEach((row) => {
+                        if(row.id === book.title){
+                            row.remove();
+                        }
+                    })
                 } 
             });
             console.log(myLibrary);
