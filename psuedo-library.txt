@@ -43,6 +43,22 @@
 		- wee need to remove old element and replace with new one
 
 
+- add a button for each book in the table for delete them :
+	- when add / submit button is clicked by user the book will show into the row
+	- when that happen, not only the data will show but also the remove button :
+		- create element button html in dom
+		- display each side of row and create data-attribute for labeling
+	- make a function to delete when button was clicked :
+		- store all the delete button
+		- iterate all the button
+		- when the button clicked, show wich button was click
+		- if button.reference is equal to object.title
+		- delete that array :
+			- find the index of array
+			- splicec that index
+
+
+
 
 
 
