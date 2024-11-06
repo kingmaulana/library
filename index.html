@@ -8,20 +8,36 @@
 </head>
 <body>
     <h1>LIBRARY</h1>
-    <table>
-        <caption>My Library Collection - All Kind of Books around the Universe</caption>
-        <thead>
-            <tr>
-                <th scope="col">Title</th>
-                <th scope="col">Author</th>
-                <th scope="col">Pages</th>
-                <th scope="col">Read</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-        </tbody>
-    </table>
+    <div class="main-box">
+        <table>
+            <caption>My Library Collection - All Kind of Books around the Universe</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Pages</th>
+                    <th scope="col">Read</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <form action="">
+            <label for="title">Title</label>
+            <input type="text" name="author" id="title" required>
+
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" required>
+
+            <label for="pages">Pages</label>
+            <input type="number" name="pages" id="pages" required>
+
+            <label for="read">Read</label>
+            <input type="text" name="read" id="read" required>
+
+            <button id="add-btn" type="submit">Add Book</button>
+        </form>
+    </div>
 
     <script src="script.js"></script>
 </body>

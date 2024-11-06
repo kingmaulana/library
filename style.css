@@ -38,3 +38,13 @@ tfoot th {
 tfoot td {
     font-weight: bold;
 }
+
+/* Code goes Here */
+.main-box {
+    display: flex;
+    justify-content: space-around;
+}
+ 
+form input {
+    display: block;
+}

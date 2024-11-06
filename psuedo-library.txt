@@ -1,0 +1,50 @@
+- book object -> constuctor
+- an array to store object of Books
+- function with some argument in it -> return a new book to array
+
+
+-Book object have property :
+	-title
+	-author
+	-pages
+	-read or not yet
+
+-books = [] (empty array for store)
+
+-function addBook (to create book object) :
+	- param(title, author, pages, read)
+	- books.push(new Book(all param))
+
+(to show a book)
+- set html for title first h1 or div
+- get the html element h1
+
+- function showBooks:
+	-forEach bookCollection iterate :
+		- select only the title
+		- create element h1 within div
+		- append child h1 to the div
+
+- create a table for display :
+	- select the table -> tbody
+	- create element tr
+	- create element th and td 3 times
+	- append th, td inside the tr
+
+
+- button add book : prevent the pages refresh automatic when click button
+
+- form submit (make the input user as argument to the function addBook() :
+	- make dom for all input form(using value to handle in script)
+	- call addBook() then pass the param as argument
+	- problem when click submit : (solve cuz i create element in forEach, just move out)
+		- the display html keep create element
+		- the display duplicate element already created before
+		- wee need to remove old element and replace with new one
+
+
+
+
+
+
+
