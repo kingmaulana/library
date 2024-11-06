@@ -9,7 +9,7 @@ function Book(title, author, pages, isRead) {
     this.author = author,
     this.pages = pages,
     this.isRead = isRead;
-}
+};
 
 //Add book
 addBookToLibrary('A Tale of Two Cities', 'Charles Dickens', 110, true);
@@ -24,7 +24,7 @@ addBookToLibrary('A Tale of Two Cities', 'Charles Dickens', 110, true);
 //function to creat instance of book
 function addBookToLibrary(title, author, pages, isRead) {
     return myLibrary.push(new Book(title, author, pages, isRead));
-}
+};
 
  
 //Display book to User
@@ -103,6 +103,7 @@ btn.addEventListener('click', (x) => {
     //trigger here, because the script read the delete button 
     //at first so the new added button doesn't update automaticly
     buttonRemove();
+    checkboxFunc();
 });
 buttonRemove();
 
@@ -127,9 +128,27 @@ function buttonRemove() {
                             //delete the tr or row in table
                             row.remove();
                         }
-                    })
-                } 
+                    });
+                };
             });
-        })
+        });
+    });
+};
+
+//console.log(myLibrary);
+//console.log(cbxButton);
+function checkboxFunc() {
+    const cbxButton = document.querySelectorAll("table input");
+    cbxButton.forEach((button) => {
+        button.addEventListener('click', () => {
+            myLibrary.forEach((item) => {
+                if(item.title === button.id && button.checked === true) {
+                    item.isRead = true;
+                } else {
+                    item.isRead = false;
+                }
+            });
+        });
     });
 }
+checkboxFunc();
