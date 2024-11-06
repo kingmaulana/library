@@ -49,6 +49,7 @@ function showBookCollection() {
         //!!!!  
 
         //gave an content text to the element 
+        tr.id = book.title;
         th.textContent = book.title;
         td1.textContent = book.author;
         td2.textContent = book.pages;
