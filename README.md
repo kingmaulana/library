@@ -1,4 +1,4 @@
 # library
 
-Add this description to the second branch
+Add this description to the second branch, so nothing new
 
