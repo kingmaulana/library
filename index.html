@@ -3,11 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library</title>
+    <title>ONI Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Londrina+Sketch&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>LIBRARY</h1>
+    <header>
+        <h1>ONI LIBRARY</h1>
+
+        <div class="right-side">
+            <img src="img/avatar.png" alt="profile">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>backburger</title><path d="M5,13L9,17L7.6,18.42L1.18,12L7.6,5.58L9,7L5,11H21V13H5M21,6V8H11V6H21M21,16V18H11V16H21Z" /></svg>
+        </div>
+    </header>
+    <main>
+        <article>
+            <h2>Open your window to the world</h2>
+            
+            <form>
+                <fieldset>
+                    <legend>Add New Book</legend>
+
+                    <label for="title">Title</label>
+                    <input type="text" name="author" id="title" required>
+        
+                    <label for="author">Author</label>
+                    <input type="text" name="author" id="author" required>
+        
+                    <label for="pages">Pages</label>
+                    <input type="number" name="pages" id="pages" required>
+                    
+                    <div class="checkbox-box">
+                        <input type="checkbox" id="switch" class="checkbox"/>
+                        <label for="switch" class="toggle">Already read the book ?</label>
+                    </div>
+    
+                    <button id="add-btn" type="submit">Add Book</button>
+                </fieldset>
+            </form>
+        </article>
+        <section>
+            
+        </section>
+    </main>
+
+
     <div class="main-box">
         <table>
             <caption>My Library Collection - All Kind of Books around the Universe</caption>

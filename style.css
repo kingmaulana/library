@@ -69,7 +69,7 @@ tfoot td {
 
 
 /* Code goes Here */
-.main-box {
+/* .main-box {
     display: flex;
     justify-content: space-around;
 }
@@ -80,4 +80,108 @@ form input {
 
 input:invalid{
     border: 3px solid rebeccapurple;
+} */
+
+
+/* ---START MY CODE--- */
+body {
+    background-color: #F3F0EA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+h1 {
+    font-family: "Londrina Sketch";
+    font-weight: bold;
+}
+
+h2 {
+    font-family: "Londrina Shadow";
+}
+
+
+/* ⁡⁢⁣⁣​‌‍‌--HEADER--​⁡ */
+header {
+    display: flex;
+    width: 85%;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(164, 164, 164, 0.423);
+}
+
+.right-side {
+    display: flex;
+    margin-left: auto;
+}
+
+.right-side img {
+    border-radius: 50%;
+    width: 50px;
+    margin-right: 1rem;
+}
+
+.right-side svg {
+    width: 30px;
+}
+
+
+/* ​‌‍‌‍⁡⁢⁣⁣--END HEADER--​⁡​ */
+
+/* ⁡⁢⁣⁣​‌‍‌--HERO--​⁡ */
+
+main {
+    width: 85%;
+}
+
+main article {
+    display: flex;
+    margin-bottom: 3rem;
+}
+
+article>h2 {
+    font-size: 4rem;
+    margin-right: auto;
+    width: 35vw;
+    margin-left: 3rem;
+}
+
+article>form {
+    margin-right: 5rem;
+}
+
+form>fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+article>form input {
+    width: 20vw;
+    height: 4vh;
+}
+
+article>form button {
+    width: 7rem;
+    height: 1.7rem;
+    background-color: wheat;
+    border-radius: 4px;
+    border: 2px solid rgb(131, 119, 98);
+}
+
+.checkbox-box {
+    display: flex;
+    align-items: center;
+}
+
+#switch {
+    width: 15%;
+}
+
+button {
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+/* ⁡⁢⁣⁣​‌‍‌--END HERO--​⁡ */
+
