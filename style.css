@@ -49,3 +49,7 @@ tfoot td {
 form input {
     display: block;
 }
+
+input:invalid{
+    border: 3px solid rebeccapurple;
+}
