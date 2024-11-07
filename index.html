@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rakkas&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
 
         <div class="right-side">
             <img src="img/avatar.png" alt="profile">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>backburger</title><path d="M5,13L9,17L7.6,18.42L1.18,12L7.6,5.58L9,7L5,11H21V13H5M21,6V8H11V6H21M21,16V18H11V16H21Z" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>backburger</title><path d="M5,13L9,17L7.6,18.42L1.18,12L7.6,5.58L9,7L5,11H21V13H5M21,6V8H11V6H21M21,16V18H11V16H21Z" /></svg
         </div>
     </header>
     <main>
@@ -48,75 +48,30 @@
 
         <section>
             <div class="container">
-                <div class="card-book">
-                    <img src="img/book.png" alt="book">
+                <!-- <div class="card-book" book-ref="Harry Potter">
+                    <div class="my-img">
+                        <img src="img/bcover1.png" alt="book">
+                        <img src="alpha-x-circle.svg" alt="x" class="remove" book-ref="Harry Potter">
+                    </div>
                     <div class="desc-book">
-                        <p><strong>Title :</strong>Harry Potter and The Sorcerer Stone</p>
+                        <p><strong>Title : </strong>Harry Potter and The Sorcerer Stone</p>
                         <p><strong>Author: </strong>J.K. Rowling</p>
                         <p><strong>Pages: </strong>571</p>
-                        <p><strong>Read: </strong>YES</p>
+                        <label class="is-read"> Finished
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
                     </div>
-                </div>
-                <!-- <div class="card-book">
-                    <img src="img/book.png" alt="book">
-                    <div class="desc-book">
-                        <p>Title</p>
-                        <p>Author</p>
-                        <p>Pages</p>
-                        <p>Read</p>
-                    </div>
-                </div>
-                <div class="card-book">
-                    <img src="img/book.png" alt="book">
-                    <div class="desc-book">
-                        <p>Title</p>
-                        <p>Author</p>
-                        <p>Pages</p>
-                        <p>Read</p>
-                    </div>
-                </div>      -->
+                </div> -->
             </div>
         </section>
     </main>
-
-
-    <div class="main-box">
-        <!-- <table>
-            <caption>My Library Collection - All Kind of Books around the Universe</caption>
-            <thead>
-                <tr>
-                    <th scope="col">Title</th>
-                    <th scope="col">Author</th>
-                    <th scope="col">Pages</th>
-                    <th scope="col">Read</th>
-                    <th scope="col">Action</th>
-                    <th>Abouyt This</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table> -->
-
-        <!-- <form action="">
-            <label for="title">Title</label>
-            <input type="text" name="author" id="title" required>
-
-            <label for="author">Author</label>
-            <input type="text" name="author" id="author" required>
-
-            <label for="pages">Pages</label>
-            <input type="number" name="pages" id="pages" required> -->
-
-            <!-- <label for="read">Read</label>
-            <input type="text" name="read" id="read" required> -->
-
-            <!-- Toggle / Switch -->
-            <!-- <label for="switch" class="toggle">Already read the book ?</label>
-            <input type="checkbox" id="switch" class="checkbox"/>
-
-            <button id="add-btn" type="submit">Add Book</button>
-        </form> -->
+    <div class="line-deco">
+        <div class="vl1"></div>
+        <div class="vl2"></div>
+        <div class="vl3"></div>
+        <div class="vl4"></div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

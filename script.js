@@ -13,12 +13,12 @@ function Book(title, author, pages, isRead) {
 
 //Add book
 addBookToLibrary('A Tale of Two Cities', 'Charles Dickens', 110, true);
-// addBookToLibrary('Le Petit Prince', 'Antoine de Saint-Exupéry', 211, false);
+// addBookToLibrary('Le Petit Prince', 'Antoine de Saint-Exupéry', 211, true);
 // addBookToLibrary('The Alchemist (O Alquimista)', 'Paulo Coelho', 290, false);
 // addBookToLibrary("Harry Potter and the Philosopher's Stone", 'J. K. Rowling', 563, false);
 // addBookToLibrary('And Then There Were None', 'Agatha Christie', 456, false);
-// addBookToLibrary('The Hobbit', 'Lewis Carroll', 647, false);
-// addBookToLibrary('The Da Vinci Code', '	Dan Brown', 266, false);
+// addBookToLibrary('The Hobbit', 'Lewis Carroll', 647, true);
+// addBookToLibrary('The Da Vinci Code', '	Dan Brown', 266, true);
 // addBookToLibrary('The Catcher in the Rye', 'J. D. Salinger', 785, false);
 
 //function to creat instance of book
@@ -31,7 +31,25 @@ function addBookToLibrary(title, author, pages, isRead) {
 //function for iterate over array of myLibrary
 function showBookCollection() {
     const container = document.querySelector('.container');
-
+    
+    //make a random image png
+    const randomNumber = Math.floor(Math.random() * 10);
+    //make sure the png is never same
+    let lastNumber;
+    if(randomNumber !== lastNumber) {
+        lastNumber = randomNumber;
+    } else {
+        let numIter = Math.floor(Math.random() * 10);
+        if(numIter !== lastNumber) {
+            lastNumber = numIter;
+        } else {
+            let anotherNum = lastNumber = Math.floor(Math.random() * 10);
+            if(anotherNum !== lastNumber) {
+                lastNumber = anotherNum;
+            }
+        }
+    }
+        
     //create all element for the book
     const divMain = document.createElement('div');
     const img = document.createElement('img');
@@ -39,57 +57,70 @@ function showBookCollection() {
     const pTitle = document.createElement('p');
     const pAuthor = document.createElement('p');
     const pPages = document.createElement('p');
-    const pRead = document.createElement('p');
     const sTitle = document.createElement('strong');
     const sAuthor = document.createElement('strong');
     const sPages = document.createElement('strong');
-    const sRead = document.createElement('strong');
-    
+    const cLabel = document.createElement('label');
+    const cInput = document.createElement('input');
+    const cSpan = document.createElement('span');
+
     // for button remove
-    const td4 = document.createElement('td');
-    const removeBtn = document.createElement('button');
-    removeBtn.textContent = 'Delete';
-
-    // Toggle - Switch Button
-    const input = document.createElement('input');
-
+    const divImg = document.createElement('div');
+    const delImg = document.createElement('img');       
+    
     //iterate over the array collection of books
     myLibrary.forEach(function(book) {
         //give all the element above attribute
         divMain.className = "card-book";
-        img.src = "img/book.png";
+        divMain.setAttribute("book-ref", book.title);
+        img.src = `img/bcover${lastNumber}.png`;
         img.alt = "book";
         divDesc.className = "desc-book";
 
         pTitle.className = "p-title";
         pAuthor.className = "p-author";
         pPages.className = "p-pages";
-        pRead.className = "p-reaad";
+
+        cLabel.className = "is-read";
+        cInput.type = "checkbox";
+        cSpan.className = "checkmark";
 
         sTitle.textContent = "Title : ";
         sAuthor.textContent = "Author : ";
         sPages.textContent = "Pages : ";
-        sRead.textContent = "Read : ";
+        cLabel.textContent = "Finished";
+
+        divImg.className = "my-img"; 
+        delImg.src = "alpha-x-circle.svg";
+        delImg.alt = "x";
+        delImg.className = "remove";
+        delImg.setAttribute("book-ref", book.title);
 
         //each element show related value of array object
         pTitle.textContent = book.title;
         pAuthor.textContent = book.author;
         pPages.textContent = book.pages;
-        pRead.textContent = book.isRead;
+        cInput.checked = book.isRead;
 
         //append all the skeleton element to the parent element
         container.appendChild(divMain);
-        divMain.appendChild(img);
+        divMain.appendChild(divImg);
+        divImg.appendChild(img);
         divMain.appendChild(divDesc);
         divDesc.appendChild(pTitle);
         divDesc.appendChild(pAuthor);
         divDesc.appendChild(pPages);
-        divDesc.appendChild(pRead);
 
         pTitle.prepend(sTitle);
         pAuthor.prepend(sAuthor);
         pPages.prepend(sPages);
-        pRead.prepend(sRead);
+
+        divDesc.appendChild(cLabel);
+        cLabel.appendChild(cInput);
+        cLabel.appendChild(cSpan);
+        
+        divImg.appendChild(delImg);
+
     });
 }
 showBookCollection();
@@ -116,53 +147,53 @@ btn.addEventListener('click', (x) => {
 
     //trigger here, because the script read the delete button 
     //at first so the new added button doesn't update automaticly
-    // buttonRemove();
-    // checkboxFunc();
+    buttonRemove();
+    checkboxFunc();
 });
-// buttonRemove();
+buttonRemove();
 
 //Function button remove
-// function buttonRemove() {
-//     //select the tr for manipulate later
-//     const trTable = document.querySelectorAll("tr");
-//     const btnRemove = document.querySelectorAll(".remove");
-//     btnRemove.forEach(button => {
-//         //add a listerner for each button
-//         button.addEventListener('click', () => {
-//             //iterate each array which storage all the books
-//             myLibrary.forEach((book) => {
-//                 //check if the array object title is same with button id
-//                 if(book.title === button.attributes[0].value) {
-//                     //make an index for reference when splice(delete)
-//                     const index = myLibrary.indexOf(book);
-//                     myLibrary.splice(index, 1);
-//                     //for html element delete the item matching with array delete
-//                     trTable.forEach((row) => {
-//                         if(row.id === book.title){
-//                             //delete the tr or row in table
-//                             row.remove();
-//                         }
-//                     });
-//                 };
-//             });
-//         });
-//     });
-// };
+function buttonRemove() {
+    //select the div container for manipulate later
+    const boxBook = document.querySelectorAll(".card-book");
+    const btnRemove = document.querySelectorAll(".remove");
+    btnRemove.forEach(button => {
+        //add a listerner for each button
+        button.addEventListener('click', () => {
+            //iterate each array which storage all the books
+            myLibrary.forEach((book) => {
+                //check if the array object title is same with button id
+                if(book.title === button.attributes[3].value) {
+                    //make an index for reference when splice(delete)
+                    const index = myLibrary.indexOf(book);
+                    myLibrary.splice(index, 1);
+                    //for html element delete the item matching with array delete
+                    boxBook.forEach((item) => {
+                        if(item.attributes[1].value === book.title){
+                            //delete the tr or row in table
+                            item.remove();
+                        }
+                    });
+                };
+            });
+        });
+    });
+};
 
 //console.log(myLibrary);
 //console.log(cbxButton);
-// function checkboxFunc() {
-//     const cbxButton = document.querySelectorAll("table input");
-//     cbxButton.forEach((button) => {
-//         button.addEventListener('click', () => {
-//             myLibrary.forEach((item) => {
-//                 if(item.title === button.id && button.checked === true) {
-//                     item.isRead = true;
-//                 } else {
-//                     item.isRead = false;
-//                 }
-//             });
-//         });
-//     });
-// }
-// checkboxFunc();
+function checkboxFunc() {
+    const cbxButton = document.querySelectorAll(".is-read input");
+    cbxButton.forEach((button) => {
+        button.addEventListener('click', () => {
+            myLibrary.forEach((item) => {
+                if(item.title === button.id && button.checked === true) {
+                    item.isRead = true;
+                } else {
+                    item.isRead = false;
+                }
+            });
+        });
+    });
+}
+checkboxFunc();
